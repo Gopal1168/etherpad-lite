@@ -32,6 +32,18 @@ const hooks = require('./pluginfw/hooks');
 const padutils = require('./pad_utils').padutils;
 const socketio = require('./socketio');
 
+const getCookie = (name) => {
+  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  if (match) return match[2];
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const themeColor = getCookie('themeColor');
+  if (themeColor) {
+      document.documentElement.style.setProperty('--primary-color', themeColor);
+  }
+});
+
 let token, padId, exportLinks, socket, changesetLoader, BroadcastSlider;
 
 const init = () => {

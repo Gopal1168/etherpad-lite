@@ -32,6 +32,7 @@
 .toolbar .buttonicon {
   background-color: transparent;
   font-size: 15px;
+  color: var(--primary-color);
 }
 .buttonicon-insertorderedlist:before,
 .buttonicon-insertunorderedlist:before,
@@ -88,7 +89,7 @@
 }
 
 .toolbar .menu_right li a.selected {
-  background-color: #576273;
+  background-color: #576273; 
   background-color: var(--text-soft-color);
   color: #ffffff;
   color: var(--bg-color);

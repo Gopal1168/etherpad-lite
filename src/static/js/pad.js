@@ -46,6 +46,23 @@ const colorutils = require('./colorutils').colorutils;
 const randomString = require('./pad_utils').randomString;
 const socketio = require('./socketio');
 
+const getCookie = (name) => {
+  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  if (match) return match[2];
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const themeColor = getCookie('themeColor');
+  if (themeColor) {
+    document.documentElement.style.setProperty('--uib-color', themeColor);
+    document.documentElement.style.setProperty('--primary-color', themeColor);
+    console.log('Applied theme color : ', themeColor);
+  }else {
+    console.log('No theme Colour retrieved : ', themeColor)
+  }
+});
+
+
 const hooks = require('./pluginfw/hooks');
 
 // This array represents all GET-parameters which can be used to change a setting.
