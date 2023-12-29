@@ -218,7 +218,7 @@ exports.toolbar = {
   ],
   right: [
     ['importexport', 'timeslider', 'savedrevision'],
-    ['settings', 'embed'],
+    ['settings'],
     ['showusers'],
   ],
   timeslider: [
